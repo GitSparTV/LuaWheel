@@ -13,7 +13,7 @@
 	index--; \
 	if (!LogiIsDeviceConnected(index, LOGI_DEVICE_TYPE_WHEEL)) luaL_error(L, "%s", "No device connected at the given index or it's not a wheel."); \
 
-extern "C" { EXPORT int luaopen_luawheel(lua_State* L); }
+extern "C" { __declspec(dllexport) int luaopen_luawheel(lua_State* L); }
 
 static const char* NameToString(int enm) {
 	switch (enm) {
