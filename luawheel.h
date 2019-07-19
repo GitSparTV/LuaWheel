@@ -1,6 +1,5 @@
 #include "lua.hpp"
 
-#define EXPORT __declspec(dllexport)
 #define newindex(name,func) \
 	lua_pushstring(L, name); \
 	lua_pushcfunction(L, func); \
@@ -131,24 +130,4 @@ static const char* PeriodicTypeToString(int enm) {
 	case LOGI_PERIODICTYPE_TRIANGLE: return "TRIANGLE"; break;
 	default: return "UNKNOWN"; break;
 	}
-}
-
-#define lprint(L,fmt,...) \
-	lua_getfield(L, LUA_GLOBALSINDEX, "print"); \
-	lua_pushfstring(L, fmt, __VA_ARGS__); \
-	lua_call(L, 1, 0);
-
-static void PrintStack(lua_State* L)
-{
-	int top = lua_gettop(L);
-	lprint(L,"%s", "Stack:");
-	for (int i = 1; i <= top; i++) {
-		lua_getfield(L, LUA_GLOBALSINDEX, "tostring");
-		lua_pushvalue(L, i);
-		lua_call(L, 1, 1);
-		lprint(L,"\t%d\t=\t%s", i, lua_tostring(L, -2));
-		lua_pop(L, 1);
-	}
-	lprint(L,"%s", "");
-	return;
 }

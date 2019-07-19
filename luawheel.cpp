@@ -335,7 +335,6 @@ static int LuaWheel_GetWheelData(lua_State* L)
 	return 1;
 }
 
-// Get Wheel Position
 static int LuaWheel_GetWheelPosition(lua_State* L)
 {
 	CheckWheelOnArg1
@@ -348,7 +347,6 @@ static int LuaWheel_GetWheelPosition(lua_State* L)
 	return 1;
 }
 
-// Get Wheel Accelerator
 static int LuaWheel_GetWheelAccelerator(lua_State* L)
 {
 	CheckWheelOnArg1
@@ -361,7 +359,6 @@ static int LuaWheel_GetWheelAccelerator(lua_State* L)
 	return 1;
 }
 
-// Get Wheel Brake
 static int LuaWheel_GetWheelBrake(lua_State* L)
 {
 	CheckWheelOnArg1
@@ -388,7 +385,6 @@ static int LuaWheel_GetWheelControls(lua_State* L)
 	return 3;
 }
 
-// Get Wheel Buttons
 static int LuaWheel_GetWheelButtons(lua_State* L)
 {
 	CheckWheelOnArg1
@@ -644,7 +640,7 @@ static int LuaWheel_IsAvailable(lua_State* L)
 }
 
 
-int EXPORT luaopen_luawheel(lua_State* L) {
+int __declspec(dllexport) luaopen_luawheel(lua_State* L) {
 	LogiSteeringInitialize(false);
 	LogiUpdate();
 	luaL_newmetatable(L, "LuaWheel");
@@ -751,5 +747,3 @@ int EXPORT luaopen_luawheel(lua_State* L) {
 
 	return 1;
 }
-// print(pcall(require,"luawheel"))
-// printt(require("luawheel"))
