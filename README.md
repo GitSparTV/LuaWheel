@@ -1,6 +1,7 @@
 # LuaWheel
 **Logitech Steering Wheel Implementation for Lua**
 
+
 This module adds low-level access to Logitech Steering Wheel SDK.
 
 Supported devices are listed here: [SupportedDevices](#supporteddevices)
@@ -15,6 +16,7 @@ Supported devices are listed here: [SupportedDevices](#supporteddevices)
 *Note*: If you require LuaWheel when your window (HWND) is not in foreground, this will silently fail, but all functions will be available. Use [.IsAvailable()](#isavailable) to check when LuaWheel is ready.
 
 Demo available in LoveWheelTest. Note: it was tested only on "Logitech MOMO Racing Force Feedback Wheel".
+![LuaWheel Demo](LuaWheelDemo.gif)
 
 ## Preparing
 Download Logitech Steering Wheel .lib files, headers and demo-tester [here](https://www.logitechg.com/en-roeu/innovation/developer-lab.html)
