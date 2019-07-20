@@ -609,7 +609,7 @@ static int LuaWheel_GetWheelShiterMode(lua_State* L)
 	return 1;
 }
 
-static int LuaWheel_GetWheelOperationRange(lua_State* L)
+static int LuaWheel_GetWheelOperatingRange(lua_State* L)
 {
 	CheckWheelOnArg1
 		int result = -1;
@@ -619,7 +619,7 @@ static int LuaWheel_GetWheelOperationRange(lua_State* L)
 	return 1;
 }
 
-static int LuaWheel_SetWheelOperationRange(lua_State* L)
+static int LuaWheel_SetWheelOperatingRange(lua_State* L)
 {
 	CheckWheelOnArg1
 		int range = luaL_checkinteger(L, 2);
@@ -689,8 +689,8 @@ int __declspec(dllexport) luaopen_luawheel(lua_State* L) {
 
 		newindex("GetWheelShiterMode", LuaWheel_GetWheelShiterMode)
 
-		newindex("GetWheelOperationRange", LuaWheel_GetWheelOperationRange)
-		newindex("SetWheelOperationRange", LuaWheel_SetWheelOperationRange)
+		newindex("GetWheelOperatingRange", LuaWheel_GetWheelOperatingRange)
+		newindex("SetWheelOperatingRange", LuaWheel_SetWheelOperatingRange)
 
 		lua_pushstring(L, "ForceTypes");
 	lua_newtable(L);
